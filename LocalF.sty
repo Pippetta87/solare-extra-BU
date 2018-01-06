@@ -1,0 +1,58 @@
+\ProvidesPackage{LocalF}
+
+\DeclareMathOperator{\tg}{tan}
+\newcounter{columneqc}
+\stepcounter{equation}
+\newcommand\Label[1]{&\refstepcounter{columneqc}\ (\theequation.\thecolumneqc)\ltx@label{#1}&}
+
+\newcommand{\Exp}[1]{\text{exp}\{#1\}}
+
+\newcommand{\mss}{modello solare standard}
+
+\newenvironment{errata}[1][ ]%%%% errata
+{\refstepcounter{erratac}\adderratacontent{#1}%
+\begingroup {\theerratac: #1}
+\color{grey}
+}{\vspace{5mm}\noindent\rule{0.5\textwidth}{0.4pt}\\\endgroup}
+
+\ifx\status\keeptrying
+\newenvironment{wordonframe}[1]{\begin{frame}{#1}}{\end{frame}}
+\else
+\newenvironment{wordonframe}[1]{\comment}{\endcomment}
+\fi
+
+
+%% helper macros for celestial-sphere
+
+\newcommand\pgfmathsinandcos[3]{%
+  \pgfmathsetmacro#1{sin(#3)}%
+  \pgfmathsetmacro#2{cos(#3)}%
+}
+\newcommand\LongitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % azimuth
+  \tikzset{#1/.style={cm={\cost,\sint*\sinEl,0,\cosEl,(0,0)}}}
+}
+\newcommand\LatitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % latitude
+  \pgfmathsetmacro\yshift{\cosEl*\sint}
+  \tikzset{#1/.style={cm={\cost,0,0,\cost*\sinEl,(0,\yshift)}}} %
+}
+\newcommand\DrawLongitudeCircleName[3][1]{
+  \LongitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+   % angle of "visibility"
+  \pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+  \draw[name path=#3,current plane] (\angVis:1) arc (\angVis:\angVis+180:1);
+  \draw[name path=dashed#3,current plane,dashed] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}
+\newcommand\DrawLatitudeCircleName[3][2]{
+  \LatitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+  \pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
+  % angle of "visibility"
+  \pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+  \draw[name path=#3,current plane] (\angVis:1) arc (\angVis:-\angVis-180:1);
+  \draw[name path=dashed#3,current plane,dashed] (180-\angVis:1) arc (180-\angVis:\angVis:1);
+}

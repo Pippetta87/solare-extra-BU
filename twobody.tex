@@ -1,0 +1,260 @@
+\section{Potenziali con orbite chiuse e limitate}
+
+\begin{frame}{Potenziali centrali con orbite limitate}
+
+\begin{block}{Teorema di Bertrand}
+
+among central force potentials with bound orbits, there are only two types of central force potentials where all bound orbits are also closed:
+
+\begin{itemize}
+
+\item Inverse square central force : $V(\vec{r})=\frac{-k}{r}$
+
+\item harmonic oscilaltor: $V(\vec{r})=\frac{1}{2}kr^2$
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{wordonframe}{potenziale che ammette orbite chiuse}
+
+Punto stazionario di V ( cio\'e del potenziale efficacie).
+
+Stabilit\'a orbita: $\TtwoDy{r}{V}<0$
+
+\end{wordonframe}
+
+\section{Orbite Kepleriane}
+
+\begin{frame}{Problema ridotto}
+
+\begin{columns}
+
+\begin{column}{0.3\textwidth}
+
+\input{reducedproblem}
+
+\begin{align*}
+&m_1\ddvec{r}_1=\frac{m_1m_2G}{r^3}\vec{r}\\
+&m_2\ddvec{r}_2=\frac{m_1m_2G}{r^3}\vec{r}\\
+&\mu\ddvec{r}=-k^2\frac{\vec{r}}{r^3}=-\frac{\gamma}{\mu}\frac{\vec{r}}{r^3}
+\end{align*}
+
+
+\end{column}
+
+\begin{column}{0.7\textwidth}
+
+\begin{block}{Costanti del moto}
+
+\begin{align*}
+&E_T=\frac{1}{2}m_1\dvec{r}_1^2+\frac{1}{2}m_2\dvec{r}_2^2-G\frac{m_1m_2}{r}\\
+&=E_{CM}+E=\frac{1}{2}M\dvec{R}^2+\frac{1}{2}\mu\dvec{r}^2-G\frac{M\mu}{r}
+\end{align*}
+
+\begin{align*}
+&\vec{J}=\mu\vec{r}\wedge\dvec{r}\\
+&\vec{J}\cdot\vec{r}=0\\
+&\vec{J}\cdot\dvec{r}=0
+\end{align*}
+
+\begin{align*}
+&\vec{L}=\dvec{r}\wedge\vec{J}-\gamma\frac{\vec{r}}{r}=\dvec{r}\wedge\vec{J}-Gm_1m_2\frac{\vec{r}}{r}\\
+&\dvec{L}=0\\
+&\scap{J}{L}=0\\
+&\scap{L}{r}=\frac{1}{\mu}J^2-\gamma r\\
+&L^2=\gamma^2+\frac{2}{\mu}EJ^2
+\end{align*}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\begin{wordonframe}{Definizione problema 2 corpi attrazione newtoniana}
+
+\begin{align*}
+&\vec{R}=\frac{m_1\vec{r}_1+m_2\vec{r}_2}{M}\\
+&\vec{r}=\vec{r}_1-\vec{r}_2
+\end{align*}
+
+$\vec{r}$ ruota in piano perpendicolare a $\vec{J}$ e $\vec{L}$ \'e sul piano dell'orbita.
+
+\end{wordonframe}
+
+
+\begin{frame}{forma dell'orbita}
+
+\begin{columns}
+
+\begin{column}{0.4\textwidth}
+
+\input{conservedvector}
+
+\begin{block}{Periodo orbitale}
+
+\begin{align*}
+&JT=2\mu\pi ab\\
+&T=2\pi\sqrt{\frac{a^3}{k^2}}
+\end{align*}
+
+\end{block}
+
+\end{column}
+
+\begin{column}{0.45\textwidth}
+
+\begin{align*}
+&Lr\cos{v}+\gamma r=\frac{1}{\mu}J^2\\
+&r=\frac{p}{1+e\cos{v}}\\
+&p=\frac{J^2}{\gamma\mu},\ e=\frac{L}{\gamma}
+\end{align*}
+
+\begin{block}{Orbite ellittiche}
+
+\begin{align*}
+&E<0,\ e<1\\
+&r_{min}=\frac{p}{1+e},\ r_{max}=\frac{p}{1-e}\\
+&a=\frac{1}{2}(r_{min}+r_{max})=\frac{p}{1-e^2}=-\frac{\gamma}{2E}\\
+&J_{max}=\gamma\sqrt{\frac{\mu}{2|E|}}
+\end{align*}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\begin{wordonframe}{Orbita kepleriana}
+
+L'orbita \'e una conica con asse lungo $\vec{L}$, il modulo di L dipende da E e J
+
+\begin{align*}
+&e\gtreqless1\Leftrightarrow L\gtreqless\gamma\Leftrightarrow E\gtreqless0\\
+&a=\frac{\gamma}{2|E|}\\
+&b/a=\sqrt{1-e^2}
+\end{align*}
+
+connessione tra aspetti geometrici e dinamici: $a=-\frac{\gamma}{2E}$.
+
+Per una certa energia E J non pu\'o superare quel valore per cui $a=b$.
+
+\begin{align*}
+&dS=\frac{1}{2}rr\dot{\theta}\,dt\\
+&J=2\mu\TDy{t}{S}
+\end{align*}
+
+Terza legge di Keplero: $T\propto a\expy{\frac{3}{2}}$ (per pianeti maggiori sistema solare $\msun{}/m\approx\num{e-3}$)
+
+moto medio $\frac{2\pi}{T}$: $n^2a^3=k^2$
+
+\end{wordonframe}
+
+
+\begin{frame}{Elementi orbitali}
+
+\input{orbelements}
+
+\end{frame}
+
+
+
+\begin{wordonframe}{Elementi orbitali}
+
+Piano ecclittica: piano orbita solare rif geocentrico: ''intersezione della sfera celestecon il piano su cui giace l'orbita terrestre
+
+Linea dei nodi \'e intersezione tra piano orbita pianeta e piano eclittica, i \'e l'inclinazione del piano dell'orbita rispetto al piano dell'eclittica
+
+L'angolo $\Omega$ identifica l'orientazione della linea dei nodi rispetto al punto $\gamma$ posizione del Sole all'equinozio di primavera; l'angolo $\omega$ identifica la direzione del semi-asse maggiore rispetto alla linea dei nodi; l'angolo $\nu$ identifica la posizione del pianeta sull'orbita.
+
+\end{wordonframe}
+
+
+\begin{frame}{Orbite Kepleriane - legge del moto.}
+
+\begin{columns}
+
+\begin{column}{0.2\textwidth}
+
+\begin{figure}[!ht]
+
+\includegraphics[width=\textwidth]{ellipseinO}
+
+\end{figure}
+
+
+
+\end{column}
+
+\begin{column}{0.8\textwidth}
+
+\begin{block}{Anomalia eccentrica}
+
+\begin{align*}
+&r\cos{\nu}=a\cos{u}-ae\\
+&\pi\frac{ab}{T}=\frac{1}{2}nab=\frac{1}{2}r^2\dot{v}=\frac{1}{2}br\dot{u}\\
+&=\frac{1}{2}ab(1-e\cos{u})\dot{u}=\frac{1}{2}ab\TDof{t}(u-e\sin{u})
+\end{align*}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\begin{block}{Anomalia media: equazione di Keplero}
+
+\begin{align*}\label{eq:Keq}
+&\phi=u-e\sin{u}\Rightarrow\dot{\phi}=n
+\end{align*}
+
+
+\end{block}
+
+
+\end{frame}
+
+\begin{wordonframe}{legge oraria}
+
+u \'e detta anomalia eccentrica
+
+Relazioni trigonometriche tra ue $\nu$
+\begin{align*}
+&a(1-e\cos{u})=\frac{p}{1+\cos{\nu}}\\
+&\tg{\nu/2}=\sqrt{\frac{1+e}{1-e}}\tg{u/2}
+\end{align*}
+
+$\phi(t)=\phi_0+nt=n(t-t_0)$: $\phi_0$ \'e l'istante in cui $\phi=\nu=0$.
+
+Il problema \'e caratterizzato da 6 costanti: $E$, $J_x$, $J_y$, $J_z$, $\nu$ (direzione di $\vec{L}$), $t_0$.
+
+L'equazione di Keplero \refeq{eq:Keq}, noti n e $t_0$, fornisce $\phi(t)$ e quindi $u(t)$ e ancora $r(t)$ e $\nu(t)$.
+
+\end{wordonframe}
+
+\begin{frame}{Approx. piccola eccentricit\'a}
+
+\begin{figure}[!ht]
+
+\includegraphics[width=0.5\textwidth]{tolomeo}
+
+\end{figure}
+
+
+\end{frame}
+
+\begin{wordonframe}{orbita quasi circolare}
+$\sqrt{\frac{1+e}{1-e}}\approx1+e$
+
+$v\approx\phi+2e\sin{\phi}$
+
+equante di Tolomeo: l'angolo in E \'e $\phi$ a meno di $e^2$
+
+\end{wordonframe}

@@ -1,0 +1,280 @@
+\part{Sistema solare: pianeti maggiori, asteroidi, anelli e comete. Evoluzione}
+\frame{\partpage}
+
+\input{solarsystem}
+
+\part{Formazione dei sistemi planetari}
+\frame{\partpage}
+
+\input{formation}
+
+\part{Sistemi extra-solari; pianeti abitabili.}
+\frame{\partpage}
+
+\input{extrasolar}
+
+
+%%%Appunti penco
+\part{Dinamica/Meccanica celeste}
+
+\chapter{Problema a 2 corpi}
+\PartialToc
+
+\section{Problema dei 2 corpi}
+
+\subfile{tikz/reducedproblem.tex}
+
+\begin{usefull}{Costante di Gravitazione universale: G}
+
+\begin{equation*}
+G\approx4.302*10^{-3}\,pc/M_{\odot}^{3}(km/s)^2
+\end{equation*}
+
+\end{usefull}
+
+\subsection{Problema ridotto}
+
+
+\subsubsection{Legge di gravitazione}
+
+La forza che agisce sui 2 corpi \'e risp
+\begin{align*}
+\vec{F_m}=-GMm\frac{\vec{r}}{r^3}\\
+\vec{F_M}=-GMm\frac{\vec{r}}{r^3}\\
+\end{align*}
+
+\begin{definition}{Coefficiente $\gamma$ del problema a 2 corpi}
+
+Definisco $\gamma=GmM$. G \'e la costante di gravitazione universale.
+
+\end{definition}
+
+
+Ridurremo il problema a 2 corpi al problema di un corpo di massa $\mu$ attratto da un centro $O$
+\begin{align*}
+m\ddvec{r_1}=\vec{F_m}=-GMm\frac{\vec{r}}{r^3}\\
+M\ddvec{r_2}=\vec{F_M}=-GMm\frac{\vec{r}}{r^3}\\
+\end{align*}
+dividendo e sottraendo si perviene all'equazione fondamentale
+
+\begin{align}
+&\mu\ddvec{r}=-\gamma\frac{\vec{r}}{r^3}\label{eq:fondamentale}\\
+&\ddvec{r}=-k^2\frac{\vec{r}}{r^3}
+\end{align}
+
+Introduco la costante di Gauss\index{Costante di Gauss}
+\begin{align*}
+\frac{1}{\mu}=\frac{1}{M}+\frac{1}{M}\\
+k^2=\frac{\gamma}{\mu}=G(M+m)
+\end{align*}
+
+\subsection{Costanti del moto: energia, momento angolare, vettore di Lenz}
+Avendo come obiettivo di integrare ~\ref{eq:fondamentale} elenco le costanti del moto (Per primi due vedi moto a 2 corpi riferito al CM)
+
+\begin{enumerate*}
+
+\item Energia\\
+\begin{equation*}
+E=T+V=\frac{1}{2}\mu|\dot{r}|^2-\frac{\gamma}{r}
+\end{equation*}
+
+\item Momento angolare\\
+\begin{equation*}
+\vec{J}=\mu\vecp{r}{\dot{r}}
+\end{equation*}
+quindi \lbt{\scap{J}{r}=0}{\scap{J}{\dot{r}}=0} cio\'e il momento angolare \'e perpendicolare al vettore posizione e alla velocit\'a.
+
+
+\item Vettore di Lenz\\
+\begin{equation*}\label{eq:lenzv}
+\vec{L}=\vecp{\dot{r}}{J}-\gamma\frac{\vec{r}}{r}
+\end{equation*}
+
+
+\subfile{tikz/lenzvector.tex}
+
+\end{enumerate*}
+
+Esplicitando $\vec{\dot{L}}$ e usando la conservazione dell'energia e l'equazione del moto ~\ref{eq:fondamentale} vedo che $\vec{L}$ \'e costante del moto.
+
+\subsection{Propriet\'a del vettore di Lenz}
+
+\begin{itemize*}
+\item Ortogonale al mometno angolare
+\begin{equation*}\label{eq:JLzero}
+\scap{J}{L}=0
+\end{equation*}
+
+\item Modulo del vettore di Lenz
+\begin{equation*}\label{eq:moduloL}
+L^2=\gamma^2+\frac{2}{\mu}EJ^2
+\end{equation*}
+
+\item Proiezione di $\vec{L}$ lungo $\vec{r}$
+\begin{equation*}\label{eq:Lr}
+\scap{L}{r}+\gamma r=\frac{1}{\mu}J^2
+\end{equation*}
+\end{itemize*}
+
+\subsection{Conseguenze delle leggi di conservazione}
+
+\begin{enumerate*}
+\item Moto piano\\
+Esiste un vettore $\vec{J}$, costante del moto, sempre ortogonale ad $\vec{r}$: $\vec{r}$ ruota in un piano ortogonale a $\vec{J}$.
+\item Il vettore di Lenz \'e sul piano dell'orbita\\
+Segue da ~\ref{eq:JLzero}
+\end{enumerate*}
+
+
+\section{Forma dell'orbita}
+
+
+\subsubsection{Anomalia vera}
+
+Chiamo anomalia vera l'angolo tra $\vec{L}$ e $\vec{r}$.
+
+Utilizzo ~\ref{eq:Lr} per ricavare l'equazione dell'orbita $r=\frac{\frac{J^2}{\mu}}{\gamma+L\cos{v}}$ e ponendo \lbt{p=\frac{J^2}{\gamma\mu}}{e=\frac{L}{\gamma}} ottengo la conica
+\begin{equation*}\label{eq:orbitaconica}
+r=\frac{p}{1+e\cos{v}}
+\end{equation*}
+
+\begin{itemize*}
+\item $e>1$: Iperbole.
+
+Deve essere $L>0\Rightarrow E=T+V>0$ e poich\'e \lbt{V<0}{V\abc{r\to\infty}{0}} il corpo pu\'o arrivare all'infinito con una certa energia cinetica
+
+\item $e=1$: parabola.
+
+Il corpo pu\'o andare all'infinito con velocit\'a tendente a zero.
+
+\item $e<1$: ellisse.
+
+Deve essere $L<\gamma\Rightarrow E<0$ (segue da ~\ref{eq:moduloL}): il corpo non pu\'o andare all'infinito dato che si avrebbe $T<0$.
+
+\end{itemize*}
+
+\subsection{Significato fisico del vettore di Lenz}
+
+L'asse della conica \'e lungo $\vec{L}$; il modulo non ci da altre informazioni dato che dipende da $E$ e da $|\vec{J}|$ 
+
+
+
+\section{Leggi di Keplero}
+
+
+
+\section{Soluzione del moto}
+Cenno i sistemi di coordinate Equatoriali ed Eclittiche - Soluzione del moto: anomalia vera, eccentrica, media - Approssimazioni per piccole eccentricit\'a - 
+
+\section{ degli elem. orbitali da tre osservazioni (metodo di Laplace) }
+Elementi dell'orbita di un pianeta (Tabella del sistema solare) - Determinazione degli elem. orbitali da tre osservazioni (metodo di Laplace) 
+
+\section{effemeridi}
+Riepilogo del problema dei due corpi - Calcolo delle effemeridi
+
+
+\section{Stelle doppie.}
+\begin{todo}{roche surface}
+stellar interior: pg 107-109
+\end{todo}
+
+
+\chapter{Problema dei 3 corpi}
+
+
+Problema ristretto dei tre corpi: Riferimento rotante, Integrale di Jacobi, superfici di Hill - Punti di Lagrange 
+\PartialToc
+
+\section{Riferimento rotante}
+
+Determinazione e stabilit\'a dei punti Punti di Langrange - Cenno alla stabilit\'a delle config. gerarchiche - Asteroidi Troiani e Greci - Problema delle comete - Criterio di Tisserand - Elementi e valori numerici del sistema Sole-Terra-Luna.
+Campo delle forze di marea - Sistema Terra-Luna-Sole - Cenno alle maree terrestri
+Perturbazione da primario non sferico: campo di forze aggiuntivo - Effetto sul periodo, sul nodo ascendente, sulla posizione del perigeo. - Precessione lunisolare - 
+
+
+\stopcontents[chapters]
+
+
+\backmatter
+
+\part{Appendice}
+
+\chapter{Programma Astrofisica/a 2016}
+
+\begin{itemize}
+    \item equilibrio idrostatico: sistemi autogravitanti.
+    
+Sistemi autogravitanti; l'equazione dell'equilibrio idrostatico. La scala di tempo dei processi dinamici: il tempo di free fall.
+
+\item Modelli politropici e applicazioni: l'equazione di eddington e il peso della pressione di radiazione sull'equilibrio di una stella. 
+
+Modelli politropici di nane bianche e stelle di neutroni. Il ruolo degli effetti quantistici sull'equazione di stato. La neutronizzazione della materia.
+
+\item Corpi autogravitanti in rotazione.
+
+Ellissoidi di Mc laurin e di Jacobi. 
+
+\item Energia e stabilita' di una struttura autogravitante: il teorema del viriale (richiami); il tempo di Kelvin-Helmoltz. Sistemi a calore specifico negativo.
+il criterio di stabilita' e gli indici adiabatici.
+
+\item Meccanismi di produzione e trasporto dell'energia.
+
+Il trasporto radiativo e il gradiente di temperatura. Il limite di Eddington e la relazione massa luminosita'. 
+
+\item Trasporto convettivo.
+
+Il criterio di Schwarzschild; convezione adiabatica e superadiabatica (cenni).
+
+\item La radiazione stellare; effetti di assorbimento interstellare e dovuti all'atmosfera. osservazioni nel visibile: curve di sensibilita' tradizionali. 
+
+\item Sistemi fotometrici e indici di colore. Gli spettri stellari; classificazione degli spettri stellari; la temperatura efficace. La classe di luminosit\'a.
+
+\item Righe di assorbimento negli spettri stellari: stima dell'intensit\'a in funzione dell'abbondanza nello stato di partenza. larghezza equivalente. Allargamento delle righe (Doppler, per pressione, per rotazione).
+
+\item Utilizzo degli spettri stellari a diverso livello di dispersione. Problemi di distanza in astrofisica: le distanze stellari: la parallasse (diurna e annua): introduzione.
+
+\item Parallassi stellari; definizione di parsec. Moti propri e stime di distanza basate sul moto proprio. Il diagramma di Hertzsprung-Russell delle stelle parallassate 
+
+\item Interpretazione del diagramma di H-R. Diagrammi di ammasso. Passaggio a raggi e luminosita'. Le subnane.
+
+\item Metodi di misura di masse e raggi: le stelle doppie. Caratterizzazione delle stelle doppie visuali, spettroscopiche,a eclisse. 
+
+\item Determinazione di masse e raggi in sistemi binari. relazioni massa raggio e massa-luminosita'. Criteri di classificazione delle stelle per popolazione: gli oggetti piu' brillanti in ciascun sistema, il comportamento cinematico, le peculiarita' spettroscopiche. 
+
+\item Popolazioni stellari e composizione chimica delle stelle. 
+
+\item Reazioni nucleari nelle stelle; generalita'; i cicli PP e CNO; la reazione di fusione del carbonio. Reazioni successive 
+
+\item Il Sistema Solare: scoperta e osservazione di corpi planetari. I pianeti. e pianeti extrasolari.
+
+Pianeti nani, satelliti e anelli, asteroidi (introduzione). 
+
+Asteroidi (conclusione), TNO e comete.
+
+Scoperta di pianeti extrasolari: tecniche principali (spettroscopia, transiti) e altri metodi (imaging, microlensing, pianeti intorno alle pulsar).
+
+Le caratteristiche dei pianeti extrasolari; proprieta' generali. Pianeti in zone abitabili 
+
+\item universo extra-galattico.
+
+L'universo extragalattico: nebulose e galassie: la scoperta delle Cefeidi extragalattiche; criteri di distanza in ambito extragalattico. Classificazione delle galassie: il diagramma di Hubble.
+
+\item Caratteristiche spettroscopiche delle galassie. Distribuzione spaziale della luminosita'. Quasar e nuclei galattic attivi (cenni). Oggetti ad alto redshift.
+
+\item La legge di Hubble. Modelli di universo (cenni). Il Big Bang e i problemi del modello standard. La radiazione di fondo. 
+
+\item Evoluzione del modello standard: l'inflazione, la dark matter e la dark energy. La cosmologia come potenziale laboratorio di fisica fondamentale (cenni). 
+
+\item Elementi di meccanica celeste: il problema dei due corpi e gli elementi orbitali.
+
+Mar 24/11/2015 09:00-11:00 (2:0 h) lezione: Il problema dei tre corpi: generalita'; il problema ristretto. I punti lagrangiani; i "Troiani". Introduzione all'invariante di Tisserand. (Paolo Paolicchi)
+Gio 26/11/2015 09:00-11:00 (2:0 h) lezione: L'invariante di tisserand e la classificazione delel comete. Problemi di integrabilita' di sistemi a tre o piu' corpi. Fenomeni caotici (cenni). Criteri per sistemi a piu' corpi: la disuguaglianza di Easton e la stabilita' "gerarchica". (Paolo Paolicchi)
+Lun 30/11/2015 11:00-13:00 (2:0 h) lezione: Approccio perturbativo al moto in sistemi complessi. Il metodo di Gauss e la stabilita' del Sistema Solare (cenni). (Paolo Paolicchi)
+Mar 01/12/2015 09:00-11:00 (2:0 h) lezione: Perturbazioni dovute a corpi interagenti non sferici. Calcolo approssimato del moto del pericentro. Moto di precessione dell'asse di rotazione terrestre (cenni); le maree e la sincronizzazione parziale o totale dei moti di rotazione (cenni). (Paolo Paolicchi)
+Gio 03/12/2015 09:00-11:00 (2:0 h) lezione: Processi di formazione; quadro generale della formazione stellare e planetaria; collasso "isotermo" e "adiabatico"; ruolo della rotazione. (Paolo Paolicchi)
+Gio 10/12/2015 09:00-11:00 (2:0 h) lezione: Il criterio di Jeans e le sue generalizzazioni (turbolenza, campi magnetici, rotazione uniforme e differenziale). (Paolo Paolicchi)
+Lun 14/12/2015 11:00-13:00 (2:0 h) lezione: Il problema delle instabilita' in disco sottile, e idee generali in merito alla formazione dei sistemi planetari. La struttura dei sistemi planetari. (Paolo Paolicchi)
+
+\end{itemize}
+
+\clearpage
