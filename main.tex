@@ -86,10 +86,10 @@
 \usepackage{LocalF}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Meccanica celeste (Beamer)}
+\title{Sistema solare (Beamer)}
 
 % A subtitle is optional and this may be deleted
-\subtitle{Moto in potenziale Newtoniano, sfera celeste, perturbazioni, determinazione orbite, ''meccanica analitica''.}
+\subtitle{Pianeti maggiori, pianeti nani, asteroidi (NEO,MB,Kuiper,TNO),comete, sistema pianeta-satellite, anelli, evoluzione dinamica.}
 
 %\author{F.~Author\inst{1} \and S.~Another\inst{2}}
 % - Give the names in the same order as the appear in the paper.
@@ -108,12 +108,12 @@
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
-\date{Dicembre, \today}
+\date{Febbraio, \today}
 % - Either use conference name or its abbreviation.
 % - Not really informative to the audience, more for people (including
 %   yourself) who are reading the slides online
 
-\subject{Orbite Kepleriane, effetti perturbativi, determinazione orbite da osservazioni, meccanica analitica. Moto dei 3 corpi.}
+\subject{}
 % This is only inserted into the PDF information catalog. Can be left
 % out. 
 
@@ -212,112 +212,53 @@
 % and table of contents.
 %\frame{\tableofcontents[onlyparts]}
 
-\begin{frame}[label={argomenti}]{Sistemi planetari: argomenti del corso}
-
+\begin{frame}[label={argomenti}]{Sistemi planetari: Sistema solare}
 \tableofcontents[onlyparts]
-
-
 \end{frame}
 
 \begin{wordonframe}{Perch\'e studio queste cose?? Sviluppi; futuro.}
 
-
 \end{wordonframe}
 
+\part{Modello planetario}\label{part:planetmodel}
+\frame{\partpage}
+\input{plamodels}
 
-\part{Moto 2 corpi in potenziale newtoniano}\label{part:kepler}
+\part{Fenomenologia sistema solare: pianeti terrestri, giganti gassosi, giganti ghiacciati, sistemi di anelli satelliti e corpi minori}\label{part:solsysphenomen}
 \frame{\partpage}
 
 \begin{frame}{this part toc}
 
 \begin{itemize}
 
-\item Problema ridotto: Potenziale newtoniano/ Esistenza orbite chiuse
-\item costanti del moto
-\item leggi di Keplero
-\item Traiettoria o legge oraria
-\item elementi orbitali
-\item approssimazione piccola eccentricit\'a
-\item determinazione orbita pianeta orbitante attorno al Sole da 3 osservabili
+\item Pianeti terrestri
+
+\item Giganti gassosi: Giove e Saturno
+
+\item Giganti ghiacciati: Urano, Nettuno
+
+\item Asteroidi: NEO, MB, TNO. Comete
 
 \end{itemize}
 
 \end{frame}
 
-\input{twobody}
+\input{terrestrial}
+\input{giant}
 
-\section{Determinazione orbita da 3 osservabili (Solar system)}\label{sec:orbitobs}
+\input{minorbodies}
 
-\input{obs2orb}
 
-\part{Problema Newtoniano: meccanica analitica.}\label{part:analytic}
+\part{Sistemi extra-solari.}\label{part:extrasolar}
 \frame{\partpage}
 
 \begin{frame}{this part toc}
-
 \begin{itemize}
-
-\item Meccanica analitica: equazione di H-J, separazione di H-J, e soluzione
-\item variabili canoniche
-\item (azione ridotta)
-\item Teorema di Liouville-Arnold: soluzione equazioni del moto tramite quadratura
-\item degenerazione periodi orbitali
-
+\item Caratteristiche sistemi extra-solari
+\item Pianeti abitabili
 \end{itemize}
-
-
 \end{frame}
 
-\input{analytic}
-
-\part{Attrazione non Newtoniana, orbite non Kepleriane: perturbazioni.}\label{part:perturbation}
-\frame{\partpage}
-
-\begin{frame}{this part toc}
-
-\begin{itemize}
-
-\item Potenziale non-Newtoniano: perturbazioni orbite non Kepleriane
-\item Sviluppi in multipoli dell'energia potenziale
-\item Moto perturbato
-\item Metodo di Newton
-\item Precessione luni-solare
-\item Perturbazione degli elementi orbitali: meccanica analitica.
-\item Perturbazioni periodiche e secolari
-\item Analogo quantistico
-\item Elementi osculanti
-
-\end{itemize}
-
-\end{frame} 
-
-\input{nonkeplerian}
-
-
-\part{Orbite non Kepleriane: problema dei 3 corpi.}\label{part:threebody}
-\frame{\partpage}
-
-\begin{frame}{this part toc}
-
-\begin{itemize}
-
-\item Problema dei 3 corpi ristretto
-
-\item criterio di Tisserand
-
-\item Problema generale dei 3 corpi
-
-\item comportamento caotico
-
-\item Disuguaglianza di Easton
-
-\end{itemize}
-
-
-\end{frame}
-
-
-\input{threebody}
-
+\input{extrasolar}
 
 \end{document}
