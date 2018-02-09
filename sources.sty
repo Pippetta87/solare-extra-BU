@@ -5,6 +5,10 @@
 
 %% Sistema solare
 
+\begin{filecontents}{ssplanet-name.txt}
+planet Mercury Venus Earth Mars Jupiter Saturn Uranus Neptune
+\end{filecontents}
+
 %conversione: 10^8km-AU
 %
 % a(10^8 km) e i(deg) P(d) spin(??)
@@ -21,18 +25,17 @@ dps e i P% spin
 \end{filecontents}
 
 %conversione gr-\mearth
-%mass(gram) rho(gr/cm^3) R(10^3 km)
+%mass(gram) rho(gr/cm^3) R(10^3 km) gs(m/s^2) 
 \begin{filecontents}{solarsystemmain-pc.txt}
-mass rhomean Rp %gs        j2
-3*10^{26} 5.4 2.11 
-5*10^{27} 5.2 6.05
-6*10^{27} 5.5 6.38
-6*10^{26} 3.9 3.40
-2*10^{30} 1.3 71.5
-6*10^{29} 0.7 60.0
-9*10^{28} 1.3 25.6
-1*10^{29} 1.6 24.8
-1.3*10^{25} nan 1.2
+mass 	  rhomean Rp   gs  j2
+3*10^{26} 5.4 	  2.11 3.7 6*10^{-5}
+5*10^{27} 5.2 	  6.05 8.87 4.5*10^{-6}
+6*10^{27} 5.5 	  6.38 9.78 1.082*10^{-3}
+6*10^{26} 3.9 	  3.40 3.71 1.96*10^{-3}
+2*10^{30} 1.3 	  71.5 23.12 14.71*10^{-3}
+6*10^{29} 0.7 	  60.0 8.96 16.67*10^{-3}
+9*10^{28} 1.3 	  25.6 8.69 3.34*10^{-3}
+1*10^{29} 1.6 	  24.8 11.00 3.4*10^{-3}
 \end{filecontents}
 
 %Albedo Teff Teff(grey) T(subsolar) magnitude atm-elems
@@ -47,6 +50,10 @@ A 		 Teff  TeffA  Tss  mV H atms
 0.90    36    64     90   +5.52          -7.19 {$H_2, He, CH_4$}
 0.82    33    51     72   +7.84          -6.87 {$H_2, He, CH_4$}
 nan     nan   44     63   +15.12         -0.81 nan
+\end{filecontents}
+
+\begin{filecontents}{ssdwarf-name.txt}
+body Ceres Pluto Eris Makemake Haumea
 \end{filecontents}
 
 %conversione: 10^8km-AU
