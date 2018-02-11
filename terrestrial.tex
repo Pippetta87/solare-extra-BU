@@ -4,6 +4,14 @@
 %solarsystemmain-orbit: dps e i P% spin
 %solarsystemmain-pc: mass 	  rhomean Rp   gs  j2
 %solarsystemmain-th: A 	 Teff TeffA Tss  H	  atms
+%display columns/1/.style={column name={$r_{p\odot}(\SI{e8}{\kilo\meter})$},clear infinite},
+%display columns/2/.style={column name={$R_p\SI{e3}{\kilo\meter}$},clear infinite},
+%display columns/3/.style={column name={albedo},clear infinite},
+%display columns/4/.style={column name={$T_{eff,p}$},clear infinite},
+%display columns/5/.style={column name={$T_{eff,p}'$},clear infinite},
+%display columns/6/.style={column name={$T_{ss}$},clear infinite},
+%display columns/7/.style={column name={$m_V^{opp}$},clear infinite},
+%display columns/8/.style={column name={H},clear infinite},
 
 
 \begin{frame}{Caratteristiche principali}
@@ -22,19 +30,15 @@ every last column/.style={column type/.add={}{|}},
 %columns/5/.style = {column type/.add={|}{}},
 %columns/0/.style={string type},
 display columns/1/.style={column name={$r_{p\odot}(\SI{e8}{\kilo\meter})$},clear infinite},
-display columns/2/.style={column name={$R_p\SI{e3}{\kilo\meter}$},clear infinite},
-display columns/3/.style={column name={albedo},clear infinite},
-display columns/4/.style={column name={$T_{eff,p}$},clear infinite},
-display columns/5/.style={column name={$T_{eff,p}'$},clear infinite},
-display columns/6/.style={column name={$T_{ss}$},clear infinite},
-display columns/7/.style={column name={$m_V^{opp}$},clear infinite},
-display columns/8/.style={column name={H},clear infinite},
+display columns/2/.style={column name={e},clear infinite},
+display columns/3/.style={column name={i},clear infinite},
 display columns/planets/.style={column name={pianeta},string type},
 create on use/planets/.style={create col/set list={Mercury, Venus, Earth, Mars}},
 columns/planets/.style={string type},
-columns={planets, dps, Rp, A, Teff, TeffA, Tss, mV, H},
+columns={planets, dps, e, i},
 /pgf/number format/precision=3
-     ]{solarsystemmain.txt} %%%
+     ]{solarsystemmain-pc.txt} %%%
+    
 \captionof{table}{Caratteristiche pianeti terrestri.}\label{tab:terrestrial planets}
 \end{table}
 \end{frame}
