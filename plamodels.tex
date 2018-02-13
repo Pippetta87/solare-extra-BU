@@ -2,6 +2,36 @@
 
 \subsection{Classificazione.}
 
+\begin{frame}{Sistema solare: pianeti.}
+\begin{table}[!ht]
+\pgfplotstabletypeset[every head row/.style={
+ %before row={},
+ %every last row/.style={after row=\bottomrule},
+ after row={\midrule}
+},
+every 2 row/.style={after row=\midrule},
+every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+%columns/0/.style = {column type/.add={|}{}},
+%columns/5/.style = {column type/.add={|}{}},
+%columns/0/.style={string type},
+display columns/1/.style={column name={mass},clear infinite},
+display columns/2/.style={column name={mass(Earth)},string type},
+display columns/3/.style={column name={R},clear infinite},
+display columns/4/.style={column name={$\bar{\rho}$},clear infinite},
+display columns/5/.style={column name={$g_s$},clear infinite},+
+display columns/6/.style={column name={$J_2$},clear infinite},
+display columns/planets/.style={column name={pianeta},string type},
+create on use/planets/.style={create col/set list={Mercury, Venus, Earth, Mars}},
+columns/planets/.style={string type},
+columns={planets, mass, Rp, rhomean, gs, j2},
+/pgf/number format/precision=3
+     ]{solarsystemmain-pc.txt} %%%
+%\captionof{table}{}\label{tab:}
+\end{table}
+\end{frame}
+
 \begin{frame}{Sistema solare: pianeti nani}
 \pgfplotstableread{asteroids.txt}\asteroids
 \pgfplotstableread{dwarfplanets.txt}\dwarfplanets
@@ -28,7 +58,6 @@ display columns/4/.style={column name={P (yrs)},clear infinite},
 display columns/5/.style={column name={a},clear infinite},
 display columns/6/.style={column name={e},clear infinite},
 display columns/7/.style={column name={i (deg)},clear infinite},
-columns/planets/.style={string type},
 columns={name, R, mass, spin, P, a, e, i},
 /pgf/number format/precision=3
      ]{\asteroids} %%%
@@ -55,7 +84,6 @@ display columns/2/.style={column name={mass(Earth)},string type},
 display columns/3/.style={column name={a},clear infinite},
 display columns/4/.style={column name={e},clear infinite},
 display columns/5/.style={column name={i (deg)},clear infinite},
-columns/planets/.style={string type},
 columns={name, D, mass, a, e, i},
 /pgf/number format/precision=3
      ]{\dwarfplanets} %%%
