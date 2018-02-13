@@ -4,8 +4,7 @@
 
 \begin{frame}{Sistema solare: pianeti nani}
 
-tabella caratteristiche fisiche: pianeta struttura idrostatica
-%%
+\begin{block}{Asteroidi}
 \pgfplotstableread{asteroids.txt}\asteroids
 \pgfplotstableread{dwarfplanets.txt}\dwarfplanets
 
@@ -37,6 +36,41 @@ columns={name, R, mass, spin, P, a, e, i},
      ]{\asteroids} %%%
 %\captionof{table}{Caratteristiche pianeti terrestri.}\label{tab:terrestrial planets}
 \end{table}
+\end{block}
+\begin{block}{plutini}
+\pgfplotstableread{asteroids.txt}\asteroids
+\pgfplotstableread{dwarfplanets.txt}\dwarfplanets
+
+\begin{table}[!ht]
+\pgfplotstabletypeset[skip rows between index={1}{27},
+every head row/.style={
+ %before row={},
+ %every last row/.style={after row=\bottomrule},
+ after row={\midrule}
+},
+every 2 row/.style={after row=\midrule},
+every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+%columns/0/.style = {column type/.add={|}{}},
+%columns/5/.style = {column type/.add={|}{}},
+%columns/0/.style={string type},
+display columns/0/.style={column name={Asteroid},string type},
+display columns/1/.style={column name={R (Km)},string type},
+display columns/2/.style={column name={mass \SI{e15}{\kilo\gram}},clear infinite},
+display columns/3/.style={column name={$P_{rot} (hrs)$},clear infinite},
+display columns/4/.style={column name={P (yrs)},clear infinite},
+display columns/5/.style={column name={a},clear infinite},
+display columns/6/.style={column name={e},clear infinite},
+display columns/7/.style={column name={i (deg)},clear infinite},
+columns/planets/.style={string type},
+columns={name, D, mass, spin, P, a, e, i},
+/pgf/number format/precision=3
+     ]{\dwarfplanets} %%%
+%\captionof{table}{}\label{tab:}
+\end{table}
+\end{block}
+
 \end{frame}
 
 \begin{wordonframe}{classificazione: pianeti sistema solare}
