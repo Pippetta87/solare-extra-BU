@@ -1,6 +1,47 @@
-\section{Classificazione.}
+
+\section{Modello di pianeta}
+
+\subsection{Classificazione.}
 
 \begin{frame}{Pianeti sistema solare}
+
+tabella caratteristiche fisiche: pianeta struttura idrostatica
+
+%%
+\pgfplotstableread{dataA.dat}\dataA
+\pgfplotstableread{dataB.dat}\dataB
+
+\pgfplotstablecreatecol[copy column from table={\dataB}{[index] 0}] {par1} {\dataA}
+\pgfplotstablecreatecol[copy column from table={\dataB}{[index] 1}] {par2} {\dataA}
+%%
+
+
+\begin{table}[!ht]
+\pgfplotstabletypeset[skip rows between index={4}{8},
+every head row/.style={
+ %before row={},
+ %every last row/.style={after row=\bottomrule},
+ after row={\midrule}
+},
+every 2 row/.style={after row=\midrule},
+every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+%columns/0/.style = {column type/.add={|}{}},
+%columns/5/.style = {column type/.add={|}{}},
+%columns/0/.style={string type},
+display columns/1/.style={column name={$r_{p\odot}(\SI{e8}{\kilo\meter})$},clear infinite},
+display columns/2/.style={column name={e},clear infinite},
+display columns/3/.style={column name={i},clear infinite},
+display columns/3/.style={column name={$\tau_{sid}$},clear infinite},
+display columns/3/.style={column name={obliquity},clear infinite},
+display columns/planets/.style={column name={pianeta},string type},
+create on use/planets/.style={create col/set list={Mercury, Venus, Earth, Mars}},
+columns/planets/.style={string type},
+columns={planets, dps, e, i, Ps, obl},
+/pgf/number format/precision=3
+     ]{solarsystemmain-orbit.txt} %%%
+%\captionof{table}{Caratteristiche pianeti terrestri.}\label{tab:terrestrial planets}
 \end{frame}
 
 \begin{wordonframe}{classificazione: pianeti sistema solare}
@@ -13,7 +54,6 @@ Un pianeta ha le seguenti caratteristiche
 
 \end{wordonframe}
 
-\section{Modello di pianeta}
 
 \subsection{Energia assorbita. Temperatura efficace/Radiative transfer}
 
@@ -35,3 +75,4 @@ Approssimazioni successive
     
     Equilibrio termico locale. Nel punto della superficie in cui il Sole \'e allo zenit: $T_{s*}=(\frac{R_*}{r_{P*}})\expy{\frac{1}{2}}T_{eff,*}$.
 \end{itemize}
+                
