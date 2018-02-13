@@ -7,7 +7,7 @@
 tabella caratteristiche fisiche: pianeta struttura idrostatica
 %%
 \pgfplotstableread{asteroids.txt}\asteroids
-%\pgfplotstableread{dwarfplanets.txt}\dwarfplanets
+\pgfplotstableread{dwarfplanets.txt}\dwarfplanets
 
 \begin{table}[!ht]
 \pgfplotstabletypeset[skip rows between index={1}{27},
@@ -32,7 +32,7 @@ display columns/5/.style={column name={a},clear infinite},
 display columns/6/.style={column name={e},clear infinite},
 display columns/7/.style={column name={i (deg)},clear infinite},
 columns/planets/.style={string type},
-columns={Name, R, mass, spin, P, a, e, i},
+columns={name, R, mass, spin, P, a, e, i},
 /pgf/number format/precision=3
      ]{\asteroids} %%%
 %\captionof{table}{Caratteristiche pianeti terrestri.}\label{tab:terrestrial planets}
