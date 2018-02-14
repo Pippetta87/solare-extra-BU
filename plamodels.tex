@@ -13,10 +13,10 @@ every 2 row/.style={after row=\midrule},
 every last row/.style={after row=\bottomrule},
 every first column/.style={column type/.add={|}{}},
 every last column/.style={column type/.add={}{|}},
-display columns/1/.style={column name={mass},string type},
-display columns/3/.style={column name={$\bar{\rho}$},clear infinite},
-display columns/2/.style={column name={R},clear infinite},
-display columns/4/.style={column name={$g_s$},clear infinite},
+display columns/1/.style={column name={mass\si{kilo\gram}},string type},
+display columns/3/.style={column name={$\bar{\rho}$\si{\gram\per\cubic\cm}},clear infinite},
+display columns/2/.style={column name={R\si{\kilo\meter}},clear infinite},
+display columns/4/.style={column name={$g_s\si{\meter\per\square\second}$},clear infinite},
 display columns/5/.style={column name={$J_2$},string type},
 display columns/planets/.style={column name={pianeta},string type},
 create on use/planets/.style={create col/set list={Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune}},
@@ -26,6 +26,9 @@ columns={planets, mass, rhomean, Rp, gs, j2},
      ]{solarsystemmain-pc.txt} %%%
 %\captionof{table}{}\label{tab:}
 \end{table}
+\begin{columns}[T]  \begin{column}{0.5\textwidth}\begin{itemize}\item regularity stability: \SI{100}{\mega\year} (inner), \SI{1}{\giga\year} (outer)\end{itemize}
+ \end{column} \begin{column}{0.5\textwidth}\end{column}  \end{columns}
+
 \end{frame}
 
 \begin{frame}{Sistema solare: pianeti nani}
