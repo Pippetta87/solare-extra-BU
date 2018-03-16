@@ -19,9 +19,7 @@
 \newcommand\listofframes{\@starttoc{lbf}}
 \makeatother
 \newcommand{\tolbf}{%
-  \addcontentsline{lbf}{section}{\protect\makebox[2em][l]{%
-    \protect\usebeamercolor[fg]{structure}\insertframenumber\hfill}%
-   \insertframetitle\par}%
+  \addcontentsline{lbf}{section}{\protect\makebox[2em][l]{\protect\insertframenumber\hfill}\insertframetitle\par}}%
 
 %% helper macros for celestial-sphere
 
