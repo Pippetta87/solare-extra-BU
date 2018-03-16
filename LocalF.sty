@@ -15,8 +15,8 @@
 \newenvironment{wordonframe}[1]{\comment}{\endcomment}
 \fi
 
-\makeatletter
-\newcommand\listofframes{\@starttoc{lbf}
+\makeatletter%% lbf
+\newcommand\listofframes{\@starttoc{lbf}}
 \makeatother
 \newcommand{\tolbf}{%
   \addcontentsline{lbf}{section}{\protect\makebox[2em][l]{%
