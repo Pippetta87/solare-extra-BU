@@ -15,30 +15,6 @@
 \newenvironment{wordonframe}[1]{\comment}{\endcomment}
 \fi
 
-\ifx \versione\bozza%%WORKOUT
-\newcommand{\listworkoutname}{List of Workout}
-\newlistof{woc%counter
-}{wol%extension
-}{\listworkoutname}
-\newcommand\addwocontent[1]{%
-\addcontentsline{wol}{chapter}%
-{#1}
-}
-
-\newcounter{woc}
-\def\thewoc{(\arabic{woc})}
-\newenvironment{workout}[1][ ]%%%% workout
-{\refstepcounter{woc}\addwocontent{#1}%
-\begingroup {\thewoc: #1} \\
-\color{midnightblue}
-}{\hspace*{\textwidth}\\\noindent\rule{0.5\textwidth}{0.4pt}\endgroup\\}
-
-\else
-
-\newenvironment{workout}[1][ ]%%%% workout
-{\comment}{\endcomment}
-\fi
-
 %% helper macros for celestial-sphere
 
 \newcommand\pgfmathsinandcos[3]{%
