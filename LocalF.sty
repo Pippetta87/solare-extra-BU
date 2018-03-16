@@ -9,12 +9,6 @@
 
 \newcommand{\mss}{modello solare standard}
 
-\newenvironment{errata}[1][ ]%%%% errata
-{\refstepcounter{erratac}\adderratacontent{#1}%
-\begingroup {\theerratac: #1}
-\color{grey}
-}{\vspace{5mm}\noindent\rule{0.5\textwidth}{0.4pt}\\\endgroup}
-
 \ifx\status\keeptrying
 \newenvironment{wordonframe}[1]{\begin{frame}{#1}}{\end{frame}}
 \else
