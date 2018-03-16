@@ -15,6 +15,14 @@
 \newenvironment{wordonframe}[1]{\comment}{\endcomment}
 \fi
 
+\makeatletter
+\newcommand\listofframes{\@starttoc{lbf}
+\makeatother
+\newcommand{\tolbf}{%
+  \addcontentsline{lbf}{section}{\protect\makebox[2em][l]{%
+    \protect\usebeamercolor[fg]{structure}\insertframenumber\hfill}%
+   \insertframetitle\par}%
+
 %% helper macros for celestial-sphere
 
 \newcommand\pgfmathsinandcos[3]{%
