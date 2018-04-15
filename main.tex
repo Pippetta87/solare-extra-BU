@@ -1,0 +1,130 @@
+\documentclass[10pt,xcolor={usenames},fleqn,mathserif,serif]{beamer}
+
+%% colors
+\definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
+\definecolor{brilliantlavender}{rgb}{0.96, 0.73, 1.0}
+\definecolor{antiquefuchsia}{rgb}{0.57, 0.36, 0.51}
+\definecolor{violetw}{rgb}{0.93, 0.51, 0.93}
+\definecolor{Veronica}{rgb}{0.63, 0.36, 0.94}
+\definecolor{atomictangerine}{rgb}{1.0, 0.6, 0.4}
+\definecolor{darkgray}{rgb}{0.66, 0.66, 0.66}
+\definecolor{brightcerulean}{rgb}{0.11, 0.67, 0.84}
+\definecolor{cadmiumorange}{rgb}{0.93, 0.53, 0.18}
+\definecolor{ochre}{rgb}{0.8, 0.47, 0.13}
+\definecolor{midnightblue}{rgb}{0.1, 0.1, 0.44}
+\definecolor{lemon}{rgb}{1.0, 0.97, 0.0}
+\definecolor{grey}{rgb}{0.7, 0.75, 0.71}
+\definecolor{amber}{rgb}{1.0, 0.75, 0.0}
+\definecolor{almond}{rgb}{0.94, 0.87, 0.8}
+\definecolor{bf}{RGB}{88, 86, 88}
+\definecolor{bb}{RGB}{177, 177, 177}
+
+%%%%%% Beamer SetUp
+\usepackage{beamersetup}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% importa pacchetti
+\usepackage{usepkg}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Funzioni generali
+\usepackage{functions}
+%http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
+\newcommand{\setmuskip}[2]{#1=#2\relax} %%problem usinig mu with calc (req by mathtools) loaded
+%%SOURCES
+\usepackage{sources}
+%\usepackage{length}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Funzioni per questo file main
+\usepackage{mathOp}
+\def\status{coazione}%ripeter
+\def\keeptrying{coazione}
+\usepackage{LocalF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Sistema solare (Beamer)}
+% A subtitle is optional and this may be deleted
+\subtitle{Pianeti maggiori, pianeti nani, asteroidi (NEO,MB,Kuiper,TNO),comete, sistema pianeta-satellite, anelli, evoluzione dinamica.}
+
+%\author{F.~Author\inst{1} \and S.~Another\inst{2}}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+%\institute[Universities of Somewhere and Elsewhere] % (optional, but mostly needed)
+%{
+% \inst{1}
+% Department of Computer Science\\
+%  University of Somewhere
+%  \and
+%  \inst{2}%
+%  Department of Theoretical Philosophy\\
+%  University of Elsewhere}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date{Aprile, \today}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+% Let's get started
+\begin{document}
+
+\input{tikzdir}%%contain tikz files as filecontents
+
+\addtobeamertemplate{block begin}{\setlength\abovedisplayskip{2pt}\setlength\belowdisplayskip{2pt}\setlength\abovedisplayshortskip{2pt}\setlength\belowdisplayshortskip{2pt}}
+
+\addtobeamertemplate{block begin}{\vspace*{-3pt}}{}
+\addtobeamertemplate{block end}{}{\vspace*{-3pt}}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+%\frame{\tableofcontents[onlyparts]}
+
+\begin{frame}[label={argomenti}]{Sistemi planetari: Sistema solare}
+\tableofcontents[onlyparts]
+\end{frame}
+
+\begin{wordonframe}{Perch\'e studio queste cose?? Sviluppi; futuro.}
+
+\end{wordonframe}
+
+\part{Modello planetario}\label{part:planetmodel}
+\input{plamodels}
+
+
+\part{Fenomenologia sistema solare: pianeti terrestri, giganti gassosi, giganti ghiacciati, sistemi di anelli satelliti e corpi minori}\label{part:solsysphenomen}
+
+\begin{frame}{this part toc}
+\begin{itemize}
+\item Pianeti terrestri
+\item Giganti gassosi: Giove e Saturno
+\item Giganti ghiacciati: Urano, Nettuno
+\item Asteroidi: NEO, MB, TNO. Comete
+\end{itemize}
+\end{frame}
+
+\section{Terrestrial planets}
+\input{terrestrial}
+
+\section{Giant planets}
+\input{giantrings}
+
+\section{Corpi minori: Asteroidi, TNO, comete.}
+\input{AKTNOcomets}
+
+
+\part{Sistemi extra-solari.}\label{part:extrasolar}
+
+\begin{frame}{this part toc}
+\begin{itemize}
+\item Caratteristiche sistemi extra-solari
+\item Pianeti abitabili
+\end{itemize}
+\end{frame}
+
+\input{extrasolar}
+
+\clearpage
+
+\listofframes
+
+\end{document}
