@@ -17,6 +17,9 @@
 \newenvironment{wordonframe}[1]{\comment}{\endcomment}
 \fi
 
+\makeatletter%% lbf
+\newcommand\listofframes{\@starttoc{lbf}}
+\makeatother
 \newcommand{\tolbf}{%
 \addcontentsline{lbf}{section}{\protect\makebox[2em][l]{\protect\insertframenumber\hfill}\insertframetitle\par}%
 }%
