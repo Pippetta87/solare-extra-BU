@@ -1,4 +1,5 @@
-\begin{tikzpicture}
+\begin{comment}
+\begin{tikzpicture}%plot tabella esopianeti
 \pgfplotstableread{circles.dat}\table
 \pgfplotstablegetrowsof{\table}
 \pgfmathsetmacro{\M}{\pgfplotsretval-1}%rows
@@ -24,6 +25,7 @@
                  \fill[mycolor,opacity=.5] (\x,\y)circle(\radius cm);
 }
 \end{tikzpicture}
+\end{comment}
 
 \begin{filecontents}{conservedvector.tex}
 \centering
