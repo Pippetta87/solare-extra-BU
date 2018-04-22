@@ -93,7 +93,7 @@ A secular resonance occurs when the precession of two orbits is synchronised (us
 \begin{columns}[T]
 \begin{column}{0.65\textwidth}
 \begin{figure}[!ht]
-\includegraphics[keepaspectratio,height=0.9\textheight]{Asdss}
+\includegraphics[keepaspectratio,height=0.85\textheight]{Asdss}
 \end{figure}
 \end{column}
 \begin{column}{0.35\textwidth}
@@ -117,12 +117,12 @@ Most pop. families (similar surface composition): Themis, EOS, Koronis, Vesta. A
 \begin{frame}{Distribuzione di massa degli asteroidi: legge di potenza.}
 \begin{block}{Collisional cascade}
 \begin{columns}[T]\begin{column}{0.5\textwidth}
-Popolazione di asteroidi $N_1$, $N_2$ con $m_1\gg m_2$: asteroidi grandi spopolati da collisioni i cui frammenti popolano $N_2$, inoltre $N_2$ sono spopolati da collisioni e processo dinamico ($\tau$).
-Stato stazionario: $N_1=\gamma N_2$, se $q=\frac{m_2}{m_1}\ll1$ $\gamma=-\frac{q}{2}+\sqrt{(\frac{q}{2})^2+q\expy{\frac{5}{3}}}$.
+Popolazione di asteroidi $N_1$, $N_2$ con $m_1\gg m_2$.
+Stato stazionario: $N_1=\gamma N_2$.
 \end{column}\begin{column}{0.5\textwidth}
 \begin{align*}
-\TDy{t}{N_1}=-\alpha\sigma_1N_1^2\\
-\TDy{t}{N_2}=(-\frac{N_2}{\tau})-\alpha\sigma_2N_1^2+(\frac{m_1}{m_2})\alpha\sigma_1N_1^2
+&\TDy{t}{N_1}=-\alpha\sigma_1N_1^2\\
+&\TDy{t}{N_2}=(-\frac{N_2}{\tau})-\alpha\sigma_2N_1^2+(\frac{m_1}{m_2})\alpha\sigma_1N_1^2
 \end{align*}
 Sezioni d'urto geometriche: $\sigma_1=\sigma_2(\frac{m_1}{m_2})\expy{\frac{2}{3}}$.
 \begin{equation*}
@@ -136,6 +136,12 @@ N_2=(\frac{m_1}{m_2})\expy{\frac{5}{6}}N_1
 n(m)\propto m\expy{-\frac{11}{6}}
 \end{equation*}
 \end{block}
+\begin{block}{$\alpha$ osservato}
+MB: $\alpha\approx\numrange{1.3}{2}$
+Lab.: $\alpha\approx1.8$
+Large bodies ($D>\SI{10}{\kilo\meter}$): $\alpha\approx2.1$
+NEO: $\alpha\approx1.58$
+\end{block}
 \end{frame}
 
 \begin{wordonframe}{Distro massa A: legge di potenza.}
@@ -145,11 +151,9 @@ n(m)\propto m\expy{-\frac{11}{6}}
 \item Evoluzione collisionale: $\sigma\approx r^2$.
 \item scaling ideale: effetto di collisione dipende dai rapporti di massa
 \end{itemize}
-L'esponente nelle distro reali oscilla attorno al valore di Dohnanyi.
-
-MB: $q<2$ ($M_{MB}\approx 3M_{Ceres}$)
+Popolazione di asteroidi $N_1$, $N_2$ con $m_1\gg m_2$: asteroidi grandi spopolati da collisioni i cui frammenti popolano $N_2$, inoltre $N_2$ sono spopolati da collisioni e processo dinamico ($\tau$).
+Stato stazionario: $N_1=\gamma N_2$, se $q=\frac{m_2}{m_1}\ll1$ $\gamma=-\frac{q}{2}+\sqrt{(\frac{q}{2})^2+q\expy{\frac{5}{3}}}$.
 \end{block}
-
 \end{wordonframe}
 
 \begin{frame}{Size distribution}
@@ -167,7 +171,7 @@ Distribuzione alla Dohnanyi  $dN\propto m\expy{-\alpha}\,dm\propto D\expy{\beta}
 \begin{frame}{Spin rate}
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
-\begin{figure}[!ht]\includegraphics[keepaspectratio,width=0.6\textwidth]{spinD}
+\begin{figure}[!ht]\includegraphics[keepaspectratio,width=0.99\textwidth]{spinD}
 \end{figure}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -202,7 +206,7 @@ Orbita pi\'u interna, incrocia anche l'orbita della Terra. Apollos/Atens can hit
 \end{wordonframe}
 
 \begin{frame}{Meteoriti}
-\begin{figure}[!ht]\includegraphics[angle=90,keepaspectratio,width=\textwidth]{meteorites}\end{figure}
+\begin{figure}[!ht]\includegraphics[angle=-90,keepaspectratio,width=\textwidth]{meteorites}\end{figure}
 \begin{itemize}
 \item Dust band at $I=\pm\deg{2},\pm\deg{10}$ (Inclination of 3 most populated A. families)
 \end{itemize}
