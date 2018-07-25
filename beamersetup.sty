@@ -36,6 +36,10 @@
 
 \hypersetup{pdfpagemode=FullScreen}
 
+\makeatletter%%see https://tex.stackexchange.com/questions/411987/how-to-fix-hypertargets-directing-links-to-the-line-after-the-target-it-looks-l
+ \newcommand{\linkdest}[1]{\Hy@raisedlink{\hypertarget{#1}{}}}
+\makeatother
+
 \addtobeamertemplate{block begin}{%
   \setlength{\textwidth}{0.95\textwidth}%
   \setlength\abovedisplayskip{0pt}%
@@ -99,15 +103,15 @@
         \end{beamercolorbox}%
 
  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-            \hyperlink{part:planetarymodel}{P.model}
+            \hyperlink{planetarymodel}{P.model}
         \end{beamercolorbox}%Problema Kepleriano
 
  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-            \hyperlink{part:solsys}{SolSys}: \hyperlink{sec:terrestrials}{Terrestrial} \hyperlink{sec:giants}{Giant} \hyperlink{sec:asteroidscomets}{Asteroid}
+            \hyperlink{solsys}{SolSys}: \hyperlink{terrestrials}{TerP} \hyperlink{giants}{GP} \hyperlink{asteroidscomets}{AstCom}(\hyperlink{asteroids}{A} \hyperlink{NE}{NE} \hyperlink{Ktnocs}{KTNOcs} \hyperlink{rings}{Rs}
         \end{beamercolorbox}% Problema Kepleriano: meccanica analitica
         
          \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-            \hyperlink{part:exosystem}{Exo}
+            \hyperlink{exosystem}{Exo}
         \end{beamercolorbox}% Potenziale non newtoniano: perturbazioni
         
         \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
